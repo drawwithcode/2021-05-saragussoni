@@ -1,5 +1,10 @@
 let clientSocket= io();
 
+function preload(){
+
+bg= loadImage("assets/flowers.jpeg")
+}
+
 clientSocket.on("connect", newConnection);
 clientSocket.on("mouseBroadcast", newBroadcast);
 
@@ -9,19 +14,19 @@ console.log(clientSocket.id);
 
 function newBroadcast(data){
   console.log(data);
-  fill("red");
-  circle(data.x, data.y, 10)
+  fill("pink");
+  rect(data.x, data.y, 10)
 }
 
 function setup() {
-  createCanvas(400, 400);
-  background(220);
-
+  createCanvas(windowWidth, windowHeight);
+  background(bg);
 }
 
 function draw() {
-  fill("yellow");
-  circle(mouseX, mouseY, 20);
+  noStroke()
+  fill("white");
+  rect(mouseX, mouseY, 7);
 }
 
 function mouseMoved(){
