@@ -25,12 +25,32 @@ function setup() {
 }
 
 function draw() {
-  noStroke()
-  fill("white");
-  rect(mouseX, mouseY, 7);
+
+  push();
+  noStroke();
+
+  fill("yellow");
+  textSize(30);
+  textAlign(CENTER);
+  text("write your message and fill the sky with bees", width / 2, height / 9 - 40);
+  pop();
+
+  //noStroke()
+  //textSize(30);
+  //textAlign(CENTER);
+  //text("write your message and fill the sky with bees", width / 2, height / 9 - 40);
+  //fill("white");
+  //rect(mouseX, mouseY, 7);
 }
 
 function mouseMoved(){
+
+  push();
+  fill("white");
+  noStroke(8);
+  rect(mouseX, mouseY, 7);
+  pop();
+
 
   let message = {
     x:mouseX,
