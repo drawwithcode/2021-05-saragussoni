@@ -15,7 +15,8 @@ console.log(clientSocket.id);
 function newBroadcast(data){
   console.log(data);
   fill("pink");
-  rect(data.x, data.y, 10)
+  rect(data.x, data.y, 3)
+  rect(data.x+10, data.y+10, 3)
 }
 
 function setup() {
