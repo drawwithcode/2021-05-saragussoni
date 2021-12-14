@@ -1,8 +1,10 @@
 let clientSocket= io();
 
+
 function preload(){
 
-bg= loadImage("assets/flowers.jpeg")
+bg= loadImage("assets/skyline.png")
+beetrail= loadImage ("assets/bee.png")
 }
 
 clientSocket.on("connect", newConnection);
@@ -14,14 +16,18 @@ console.log(clientSocket.id);
 
 function newBroadcast(data){
   console.log(data);
-  fill("pink");
-  rect(data.x, data.y, 3)
-  rect(data.x+10, data.y+10, 3)
+  //noStroke();
+  //fill("pink");
+  image(beetrail, data.x, data.y,20,20)
+
+  //rect(data.x, data.y, 3)
+  //rect(data.x+3, data.y+3, 3)
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(bg);
+  frameRate(600)
 }
 
 function draw() {
@@ -29,7 +35,7 @@ function draw() {
   push();
   noStroke();
 
-  fill("yellow");
+  fill("white");
   textSize(30);
   textAlign(CENTER);
   text("write your message and fill the sky with bees", width / 2, height / 9 - 40);
@@ -46,9 +52,10 @@ function draw() {
 function mouseMoved(){
 
   push();
-  fill("white");
+  fill(255, 255, 255, 170);
   noStroke(8);
-  rect(mouseX, mouseY, 7);
+  rect(mouseX, mouseY, 5, 5);
+  //image(beetrail, mouseX, mouseY,20,20)
   pop();
 
 
