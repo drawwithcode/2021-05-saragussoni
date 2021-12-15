@@ -3,7 +3,7 @@ let clientSocket= io();
 //preload the images
 function preload(){
 
-bg= loadImage("assets/skyline.png")
+bg= loadImage("assets/sky_pencil.png")
 beetrail= loadImage ("assets/bee.png")
 }
 
